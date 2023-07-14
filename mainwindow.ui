@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1054</width>
+    <height>678</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Image Processing Project</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="applyPushButton">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>20</y>
+      <width>100</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Apply</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="filterLabel">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>58</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Filter:</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="filterComboBox">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>20</y>
+      <width>231</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="editable">
+     <bool>false</bool>
+    </property>
+    <property name="currentText">
+     <string/>
+    </property>
+    <property name="currentIndex">
+     <number>-1</number>
+    </property>
+    <property name="placeholderText">
+     <string>Select a filter</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Direct Mapping 0-order</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Direct Mapping 1-Order</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Reverse Mapping 0-Order</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Convert to gray</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Draw the histogram</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Contrast Adjustment</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Brightness Adjustment</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Power Law</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Histogram Equalization</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Histogram Matching</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Add two images</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Subtract two images</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Image negatives</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Quantization</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Average Filter</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Weighted (Gaussian) Filter</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Sharpening Filter</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Edge Detection Filter</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Unsharpened Filter</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Ideal low pass filter</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Ideal high pass filter</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Butterworth low pass filter</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Butterworth high pass filter</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Gaussian low pass filter</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Gaussian high pass filter</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="clearPushButton">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>20</y>
+      <width>100</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clear</string>
+    </property>
+   </widget>
+   <widget class="QStackedWidget" name="inputStackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>391</width>
+      <height>581</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color=rgb(107, 255, 229)</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="oneImagePage">
+     <widget class="QLabel" name="imageLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>371</width>
+        <height>221</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 2px solid gray;
+border-radius: 10px;
+background-color: rgb(59, 59, 59);
+color: rgb(161, 161, 161)</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="text">
+       <string>No image selected</string>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="chooseButton">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>0</y>
+        <width>100</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Choose</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="chooseLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Choose image:</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="twoImagesPage">
+     <widget class="QPushButton" name="chooseFirstButton">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>0</y>
+        <width>100</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Choose</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="chooseFirstLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>121</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Choose first image:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="firstImageLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>371</width>
+        <height>221</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 2px solid gray;
+border-radius: 10px;
+background-color: rgb(59, 59, 59);
+color: rgb(161, 161, 161)</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="text">
+       <string>No image selected</string>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="chooseSecondButton">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>290</y>
+        <width>100</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Choose</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="chooseSecondLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>300</y>
+        <width>141</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Choose second image:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="secondImageLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>340</y>
+        <width>371</width>
+        <height>221</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 2px solid gray;
+border-radius: 10px;
+background-color: rgb(59, 59, 59);
+color: rgb(161, 161, 161)</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="text">
+       <string>No image selected</string>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="inputLabel">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 16pt;
+font-weight: bold;</string>
+    </property>
+    <property name="text">
+     <string>Input</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="outputLabel">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>60</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 16pt;
+font-weight: bold;</string>
+    </property>
+    <property name="text">
+     <string>Output</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="outputImageLabel">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>140</y>
+      <width>581</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid gray;
+border-radius: 10px;
+background-color: rgb(59, 59, 59);
+color: rgb(161, 161, 161)</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="text">
+     <string>Apply a filter to see the result</string>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
